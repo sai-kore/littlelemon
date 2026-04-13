@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f4f4;
+
+            /* 🔥 footer fix */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            flex: 1; /* 🔥 pushes footer down */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 220px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    🍋 Little Lemon Menu
+</header>
+
+<div class="container">
+{% for item in items %}
+    <a href="/menu/{{ item.id }}/">
+        <div class="card">
+            <h3>{{ item.title }}</h3>
+            <p class="price">₹{{ item.price }}</p>
+            <p>Stock: {{ item.inventory }}</p>
+        </div>
+    </a>
+{% endfor %}
+</div>
+
+<footer>
+    © 2026 Little Lemon
+</footer>
+
+</body>
+</html>

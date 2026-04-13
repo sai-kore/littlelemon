@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ item.title }}</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f4f4f4;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px;
+            background: #ffcc00;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+        }
+
+        footer {
+            padding: 15px;
+            background: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    {{ item.title }}
+</header>
+
+<div class="content">
+    <div class="card">
+        <p class="price">₹{{ item.price }}</p>
+        <p>Stock: {{ item.inventory }}</p>
+
+        <a href="/menu/">⬅ Back to Menu</a>
+    </div>
+</div>
+
+<footer>
+    © 2026 Little Lemon
+</footer>
+
+</body>
+</html>
