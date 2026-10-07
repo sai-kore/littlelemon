@@ -1,4 +1,4 @@
-## How to Run
+## How to Run this
 
 1. Clone the repo:
 git clone https://github.com/sai-kore/littlelemon.git
